@@ -1,0 +1,29 @@
+name: DGQ
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.9
+  - pytorch=2.2.2
+  - torchvision=0.17.2
+  - torchaudio=2.2.2
+  - pytorch-cuda=11.8
+  - pandas=2.2.1
+  - pip=24.0
+  - scikit-learn=1.5.1
+  - pip:
+    - accelerate
+    - transformers
+    - thop
+    - charset-normalizer==3.1.0
+    - pytorch_lightning
+    - einops
+    - open_clip_torch
+    - torch-fidelity==0.3.0
+    - pytorch-fid==0.3.0
+    - matplotlib
+    - huggingface_hub==0.24.7
+    - seaborn
+    - ptflops
+    - image-reward
