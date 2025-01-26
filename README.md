@@ -8,7 +8,7 @@
   <sup>*</sup>Corresponding Author<br>
 </div>
 
-<h3 align="center">[<a href="https://ugonfor.kr/DGQ">project page</a>]&emsp;[<a href="http://arxiv.org/abs/2501.04304">arXiv</a>]</h3>
+<div align="center">[<a href="https://ugonfor.kr/DGQ">project page</a>]&emsp;[<a href="http://arxiv.org/abs/2501.04304">arXiv</a>]</div>
 <br>
 
 <div align="center">
@@ -16,8 +16,9 @@
 </div>
 <br>
 
-<b>Abstract</b>: Despite the widespread use of text-to-image diffusion models across various tasks, their computational and memory demands limit practical applications. To mitigate this issue, quantization of diffusion models has been explored. It reduces memory usage and computational costs by compressing weights and activations into lower-bit formats. However, existing methods often struggle to preserve both image quality and text-image alignment, particularly in lower-bit(< 8bits) quantization. In this paper, we analyze the challenges associated with quantizing text-to-image diffusion models from a distributional perspective. Our analysis reveals that activation outliers play a crucial role in determining image quality. Additionally, we identify distinctive patterns in cross-attention scores, which significantly affects text-image alignment. To address these challenges, we propose Distribution-aware Group Quantization (DGQ), a method that identifies and adaptively handles pixel-wise and channel-wise outliers to preserve image quality. Furthermore, DGQ applies prompt-specific logarithmic quantization scales to maintain text-image alignment. Our method demonstrates remarkable performance on datasets such as MS-COCO and PartiPrompts. We are the first to successfully achieve low-bit quantization of text-to-image diffusion models without requiring additional fine-tuning of weight quantization parameters.
+<b>TL;DR</b>: We propose a distribution-aware group quantization method to preserve both image quality and text-to-image alignment in T2I diffusion models.
 
+---
 
 ### Update
 
@@ -69,12 +70,8 @@ DIFFUSERS_REWRITE=<model_type: sd/sdxl> python src/inference_qmodel.py --cali_ck
 <--use_group> <--prompt "prompts"> <--fp16> <--t2i_log_quant> <--t2i_real_time> <--t2i_start_peak> <--time_aware_aqtizer>
 ```
 
-### Evaluation.
-
-
-
 ### Acknoledgement
-This project is mainly built upon [diffusers](https://github.com/huggingface/diffusers), [BK-SDM](https://github.com/Nota-NetsPresso/BK-SDM), [TFMQ-DM](https://github.com/ModelTC/TFMQ-DM) and [Q-Diffusion](https://github.com/Xiuyu-Li/q-diffusion)
+This project is mainly built upon [diffusers](https://github.com/huggingface/diffusers), [BK-SDM](https://github.com/Nota-NetsPresso/BK-SDM), [TFMQ-DM](https://github.com/ModelTC/TFMQ-DM) and [Q-Diffusion](https://github.com/Xiuyu-Li/q-diffusion). Thank you for sharing your codes.
 
 
 ### Bibtex
