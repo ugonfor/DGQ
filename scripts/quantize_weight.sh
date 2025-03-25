@@ -10,15 +10,16 @@ export DIFFUSERS_REWRITE=$MODEL_TYPE
 if [ $MODEL_TYPE = "sd" ]; then
     STEP_SIZE=25
     NO_RECON=False # No reconstruction (True: No reconstruction, False: Reconstruction)
+    FAST=False # Weight Initialization with minmax or mse (True: minmax, False: mse)
 elif [ $MODEL_TYPE = "sdxl" ]; then
     STEP_SIZE=4
     NO_RECON=True # No reconstruction (True: No reconstruction, False: Reconstruction)
+    FAST=True # Weight Initialization with minmax or mse (True: minmax, False: mse)
     # Memory and Computation Cost issue
 fi
 CALI_DATA_PATH=./data/cali_data_${MODEL_TYPE}_${STEP_SIZE}steps # calibration data path
 MULTI_GPU=False # Multi-GPU
 TIB_RECON=False # Use TFMQ or Q-Diffusion-> for tib recon
-FAST=False # Weight Initialization with minmax or mse (True: minmax, False: mse)
 outdir=results/${MODEL_TYPE}_weight # output path
 
 if [ $MULTI_GPU = True ]; then
